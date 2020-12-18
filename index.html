@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <div class="welcome">Hello</div>
+    <div class="welcome" style="animation-delay: 4s;">Welcome on my personal website</div>
+    <div class="welcome" style="animation-delay: 8s;">I'm going to present you some of my creations</div>
+    <div class="lds-ripple"><div></div><div></div></div>
+    <div id="content">
+        <header>
+            <div id="links">
+                <a>About</a>
+                <a>Work</a>
+            </div>
+        </header>
+        <section></section>
+        <footer></footer>
+    </div>
+</body>
+
+<script type="text/javascript">
+let data = [
+    {
+        'name': 'GitHub',
+        'type': 'personal',
+        'image': 'url("imgs/github.jpeg")',
+    },
+    {
+        'name': 'CodeWe',
+        'date': 'November 2020',
+        'type': 'team',
+        'image': 'url("imgs/2020.11.codewe.png")',
+    },
+    {
+        'name': 'MagickLock',
+        'date': 'December 2020',
+        'type': 'scholar',
+        'image': 'url("imgs/2020.12.magicklock.jpg")',
+    },
+    {
+        'name': 'Competitive programming',
+        'date': 'December 2020',
+        'type': 'personal',
+        'image': 'url("imgs/2020.12.aoc.png")',
+    },
+    {
+        'name': 'Professional Job',
+        'date': 'Soon',
+        'type': 'pro',
+    },
+];
+
+data.reverse();
+
+let section = document.getElementsByTagName('section')[0];
+
+i = 0;
+
+data.forEach((values) => {
+    section.innerHTML += `
+<article style='background-image: ${values['image']}; animation-delay: ${13+i/1.5}s'>
+    <h6 class="ribbon ${values['type']}">${values['type']}</h6>
+    <h4>${values['name']}</h4>
+    <span class="date">${values['date'] ? values['date'] : ''}</span>
+</article>
+    `;
+
+    i+=1;
+});
+
+</script>
+</html>
